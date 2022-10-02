@@ -14,9 +14,15 @@ class AirportController (
     val airportService: AirportService
 ) {
 
-    @GetMapping("/topWaypoint")
-    fun listTopWaypoints(
+    @GetMapping("/sid/topWaypoint")
+    fun listTopWaypointsSID(
         @RequestParam("airport_icaos", required = false) airportIcaos: List<String>?,
         @RequestParam("top", required=false) top: Int?
-    ): List<AirportTopWaypointDTO> = airportService.listTopWaypoints(airportIcaos, top)
+    ): List<AirportTopWaypointDTO> = airportService.listTopWaypointsSID(airportIcaos, top)
+
+    @GetMapping("/star/topWaypoint")
+    fun listTopWaypointsSTAR(
+        @RequestParam("airport_icaos", required = false) airportIcaos: List<String>?,
+        @RequestParam("top", required=false) top: Int?
+    ): List<AirportTopWaypointDTO> = airportService.listTopWaypointsSTAR(airportIcaos, top)
 }
