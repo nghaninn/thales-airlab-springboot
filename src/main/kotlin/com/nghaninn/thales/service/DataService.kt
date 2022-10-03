@@ -62,38 +62,38 @@ class DataService(
         }
 
         // download Airport
-        var listAirportDTO: List<AirportDTO>? = null
+        lateinit var listAirportDTO: List<AirportDTO>
         run("$apiURL/airac/airports") {
 //            println("AIRPORT $it")
             val gson = Gson()
             listAirportDTO = gson.fromJson<List<AirportDTO>>(it, object :TypeToken<List<AirportDTO>>(){}.type)
 //            println(listAirportDTO)
 
-            val listAirportEntity = listAirportDTO!!.map {
+            val listAirportEntity = listAirportDTO.map {
                 Airport(it.uid, it.name, it.icao, it.lat, it.lng, it.alt)
             }
 
             airportRepository.saveAll(listAirportEntity)
 
-            listAirportDTO!!.forEach {
+            listAirportDTO.forEach {
                 run("$apiURL/airac/sids/airport/${it.icao}") {
 //                    println("SID $it")
                     val gson = Gson()
                     val listDownloadSIDDTO = gson.fromJson<List<DownloadSIDDTO>>(it, object :TypeToken<List<DownloadSIDDTO>>(){}.type)
 //                    println(listDownloadSIDDTO)
 
-                    val listSIDEntry = listDownloadSIDDTO.map {
+                    val listSIDEntity = listDownloadSIDDTO.map {
                         SID(it.name, it.airport.uid)
                     }
-                    val listSIDWaypointEntry = listDownloadSIDDTO.flatMap {outerList ->
+                    val listSIDWaypointEntity = listDownloadSIDDTO.flatMap { outerList ->
                         outerList.waypoints.map {wp->
                             SIDWaypoint(null, outerList.name, wp.uid)
                         }
                     }
-                    println("listSIDWaypointEntry $listSIDWaypointEntry")
+//                    println("listSIDWaypointEntry $listSIDWaypointEntry")
 
-                    sidRepository.saveAll(listSIDEntry)
-                    sidWaypointRepository.saveAll(listSIDWaypointEntry)
+                    sidRepository.saveAll(listSIDEntity)
+                    sidWaypointRepository.saveAll(listSIDWaypointEntity)
                 }
 
                 run("$apiURL/airac/stars/airport/${it.icao}") {
@@ -102,17 +102,17 @@ class DataService(
                     val listDownloadSTARDTO = gson.fromJson<List<DownloadSTARDTO>>(it, object: TypeToken<List<DownloadSTARDTO>>() {}.type)
 //                    println(listDownloadSTARDTO)
 
-                    val listSTAREntry = listDownloadSTARDTO.map {
+                    val listSTAREntity = listDownloadSTARDTO.map {
                         STAR(it.name, it.airport.uid)
                     }
-                    val listSTARWaypointEntry = listDownloadSTARDTO.flatMap {outerList ->
+                    val listSTARWaypointEntity = listDownloadSTARDTO.flatMap { outerList ->
                         outerList.waypoints.map {
                             STARWaypoint(null, outerList.name, it.uid)
                         }
                     }
 
-                    starRepository.saveAll(listSTAREntry)
-                    starWaypointRepository.saveAll(listSTARWaypointEntry)
+                    starRepository.saveAll(listSTAREntity)
+                    starWaypointRepository.saveAll(listSTARWaypointEntity)
                 }
             }
         }

@@ -26,7 +26,9 @@ dependencies {
 	implementation("com.squareup.okhttp3:okhttp:4.10.0")
 	implementation("com.google.code.gson:gson:2.9.0")
 	runtimeOnly("com.h2database:h2")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.springframework.boot:spring-boot-starter-webflux")
 }
 
 tasks.withType<KotlinCompile> {
@@ -38,4 +40,17 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+sourceSets {
+	test {
+		// before 7.1
+//		withConvention(KotlinSourceSet::class) {
+//			kotlin.setSrcDirs(listOf("src/test/intg", "src/test/unit"))
+//		}
+
+		java {
+			setSrcDirs(listOf("src/test/intg", "src/test/unit"))
+		}
+	}
 }
