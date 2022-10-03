@@ -38,9 +38,9 @@ tasks.withType<KotlinCompile> {
 	}
 }
 
-//tasks.withType<Test> {
-//	useJUnitPlatform()
-//}
+tasks.withType<Test> {
+	useJUnitPlatform()
+}
 
 //sourceSets {
 //	test {

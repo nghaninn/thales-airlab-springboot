@@ -60,33 +60,33 @@ class AirportControllerIntgTest {
         sidWaypointRepository.saveAll(sidWaypoint())
     }
 
-//    @ParameterizedTest
-//    @MethodSource("topWaypointSID")
-//    fun listTopWaypointsSID(top: Int, airportIcaos: List<String>?, expectedResult: Int) {
-//        val uriBuilder = UriComponentsBuilder.fromUriString("/v1/airport/sid/topWaypoint")
-//
-//        if (top > 0) {
-//            uriBuilder.queryParam("top", top)
-//        }
-//
-//        if ((airportIcaos ?: listOf()).isNotEmpty()) {
-//            airportIcaos!!.map {
-//                uriBuilder.queryParam("airport_icaos", it)
-//            }
-//        }
-//
-//        val airportTopWaypointDTOs = webTestClient
-//            .get()
-//            .uri(uriBuilder.toUriString())
-//            .exchange()
-//            .expectStatus().isOk
-//            .expectBodyList(AirportTopWaypointDTO::class.java)
-//            .returnResult()
-//            .responseBody
-//
-//        println("airportTopWaypointDTOs : $airportTopWaypointDTOs")
-//        Assertions.assertEquals(expectedResult, airportTopWaypointDTOs!!.size)
-//    }
+    @ParameterizedTest
+    @MethodSource("topWaypointSID")
+    fun listTopWaypointsSID(top: Int, airportIcaos: List<String>?, expectedResult: Int) {
+        val uriBuilder = UriComponentsBuilder.fromUriString("/v1/airport/sid/topWaypoint")
+
+        if (top > 0) {
+            uriBuilder.queryParam("top", top)
+        }
+
+        if ((airportIcaos ?: listOf()).isNotEmpty()) {
+            airportIcaos!!.map {
+                uriBuilder.queryParam("airport_icaos", it)
+            }
+        }
+
+        val airportTopWaypointDTOs = webTestClient
+            .get()
+            .uri(uriBuilder.toUriString())
+            .exchange()
+            .expectStatus().isOk
+            .expectBodyList(AirportTopWaypointDTO::class.java)
+            .returnResult()
+            .responseBody
+
+        println("airportTopWaypointDTOs : $airportTopWaypointDTOs")
+        Assertions.assertEquals(expectedResult, airportTopWaypointDTOs!!.size)
+    }
 
     @Test
     fun listTopWaypointsSID() {
@@ -107,14 +107,14 @@ class AirportControllerIntgTest {
         Assertions.assertEquals(3, airportTopWaypointDTOs!!.size)
     }
 
-//    companion object {
-//        @JvmStatic
-//        fun topWaypointSID(): Stream<Arguments> {
-//            return Stream.of(
-//                Arguments.arguments(3, null, 3),
-//                Arguments.arguments(3, listOf("WSSS"), 3),
-//                Arguments.arguments(3, listOf("W"), 0),
-//            )
-//        }
-//    }
+    companion object {
+        @JvmStatic
+        fun topWaypointSID(): Stream<Arguments> {
+            return Stream.of(
+                Arguments.arguments(3, null, 3),
+                Arguments.arguments(3, listOf("WSSS"), 3),
+                Arguments.arguments(3, listOf("W"), 0),
+            )
+        }
+    }
 }
