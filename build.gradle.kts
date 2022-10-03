@@ -46,11 +46,11 @@ sourceSets {
 	test {
 		// before 7.1
 //		withConvention(KotlinSourceSet::class) {
-//			kotlin.setSrcDirs(listOf("src/test/intg", "src/test/unit"))
+//			kotlin.setSrcDirs(listOf("src/test/intg"))
 //		}
 
 		java {
-			setSrcDirs(listOf("src/test/intg", "src/test/unit"))
+			setSrcDirs(listOf("src/test/intg"))
 		}
 	}
 }

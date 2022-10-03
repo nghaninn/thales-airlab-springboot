@@ -19,7 +19,7 @@ class AirportCustomRepository {
     fun findTopWaypoint(@Param("icaos") airportIcaos: List<String>?, top: Int?, type: Type): List<AirportTopWaypointDTO> {
 
         //Declare rowmapper to map DB records to collection of Beer entities:
-        val rowMapper: RowMapper<AirportTopWaypointDTO> = RowMapper<AirportTopWaypointDTO> { resultSet: ResultSet, rowIndex: Int ->
+        val rowMapper: RowMapper<AirportTopWaypointDTO> = RowMapper<AirportTopWaypointDTO> { resultSet: ResultSet, _: Int ->
             AirportTopWaypointDTO(resultSet.getString("airportUID"), resultSet.getString("waypoint_UID"), resultSet.getInt("counted"))
         }
         val where = if ((airportIcaos ?: emptyList()).isNotEmpty()) " WHERE Airport.UID IN ('"+ airportIcaos!!.joinToString("', '") + "') " else " "
