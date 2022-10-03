@@ -50,6 +50,14 @@ class DataService(
     }
 
     fun downloadAllData() {
+        // Delete all data in db.
+        starWaypointRepository.deleteAll()
+        sidWaypointRepository.deleteAll()
+        starRepository.deleteAll()
+        sidRepository.deleteAll()
+        waypointRepository.deleteAll()
+        airportRepository.deleteAll()
+
         // download Waypoint
         run("$apiURL/airac/waypoints") {
 //            println("WAYPOINT $it")
