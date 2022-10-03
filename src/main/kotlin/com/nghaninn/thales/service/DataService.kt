@@ -78,7 +78,7 @@ class DataService(
             listAirportDTO.forEach {
                 run("$apiURL/airac/sids/airport/${it.icao}") {
 //                    println("SID $it")
-                    val gson = Gson()
+//                    val gson = Gson()
                     val listDownloadSIDDTO = gson.fromJson<List<DownloadSIDDTO>>(it, object :TypeToken<List<DownloadSIDDTO>>(){}.type)
 //                    println(listDownloadSIDDTO)
 
@@ -98,7 +98,7 @@ class DataService(
 
                 run("$apiURL/airac/stars/airport/${it.icao}") {
 //                    println("STAR $it")
-                    val gson = Gson()
+//                    val gson = Gson()
                     val listDownloadSTARDTO = gson.fromJson<List<DownloadSTARDTO>>(it, object: TypeToken<List<DownloadSTARDTO>>() {}.type)
 //                    println(listDownloadSTARDTO)
 
