@@ -42,15 +42,15 @@ tasks.withType<Test> {
 	useJUnitPlatform()
 }
 
-sourceSets {
-	test {
-		// before 7.1
-//		withConvention(KotlinSourceSet::class) {
-//			kotlin.setSrcDirs(listOf("src/test/intg"))
+//sourceSets {
+//	test {
+//		// before 7.1
+////		withConvention(KotlinSourceSet::class) {
+////			kotlin.setSrcDirs(listOf("src/test/intg"))
+////		}
+//
+//		java {
+//			setSrcDirs(listOf("src/test/intg"))
 //		}
-
-		java {
-			setSrcDirs(listOf("src/test/intg"))
-		}
-	}
-}
+//	}
+//}
