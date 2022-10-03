@@ -121,7 +121,9 @@ jobs:
           --image gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{ github.sha }} \
           --platform managed \
           --allow-unauthenticated \
-          --project ${{ env.PROJECT_ID }}
+          --project ${{ env.PROJECT_ID }} \
+          --set-env-vars "thales_apiURL=${{ secrets.APIURL }}" \
+          --set-env-vars "thales_apiKey=${{ secrets.APIKEY }}" 
 
 
       # If required, use the Cloud Run url output in later steps
