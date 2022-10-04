@@ -137,4 +137,12 @@ DB query can be found here. https://github.com/nghaninn/thales-airlab-backend/bl
 ----
 
 # Others
-<img src="https://raw.githubusercontent.com/nghaninn/thales-airlab-springboot/main/images/springboot_cicd.png">
+
+![Springboot CICD](https://raw.githubusercontent.com/nghaninn/thales-airlab-springboot/main/images/springboot_cicd.png)
+![Integration Test](https://raw.githubusercontent.com/nghaninn/thales-airlab-springboot/main/images/integration_test.png)
+
+----
+
+# Resource
+1. [Kotlin SpringBoot Tutorial](https://www.udemy.com/course/build-restful-apis-using-kotlin-and-spring-boot)
+2. [GCP Springboot](https://www.youtube.com/watch?v=JqxMTQ2-VIE)
