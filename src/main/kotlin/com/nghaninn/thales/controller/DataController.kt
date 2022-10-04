@@ -11,4 +11,7 @@ class DataController (val dataService: DataService) {
 
     @GetMapping
     fun downloadAllData() = dataService.downloadAllData()
+
+    @GetMapping("/test")
+    fun getSecret() = dataService.getSecret()
 }

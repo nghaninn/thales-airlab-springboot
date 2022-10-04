@@ -29,6 +29,8 @@ class DataService(
     lateinit var apiURL: String
     @Value("\${thales_apiKey}")
     lateinit var apiKey: String
+    @Value("\${application.secret}")
+    lateinit var appSecretFromValue: String
 
 //    var apiURL: String = System.getenv("thales_apiURL") ?: "default_value"
 //    var apiKey: String = System.getenv("thales_apiKey") ?: "default_value"
@@ -127,5 +129,9 @@ class DataService(
                 }
             }
         }
+    }
+
+    fun getSecret(): String {
+        return appSecretFromValue
     }
 }

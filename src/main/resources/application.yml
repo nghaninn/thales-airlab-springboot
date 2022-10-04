@@ -19,8 +19,12 @@ spring:
   h2:
     console:
       enabled: true
-thales_apiKey: "${projects/60177703184/secrets/thales_apiKey}"
-thales_apiURL: "${projects/60177703184/secrets/thales_apiURL}"
+thales_apiKey: "${sm://thales_apiKey}"
+thales_apiURL: "${sm://thales_apiURL}"
+# enable external resource from GCP Secret Manager.
+#spring.config.import: "sm://"
+application.secret: "${sm://thales_apiKey}"
+
 ##message: Hello from default profile
 
 #---

@@ -17,15 +17,26 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.cloud:spring-cloud-gcp-starter-secretmanager")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.boot:spring-boot-starter-hateoas")
+	implementation("org.springframework.boot:spring-boot-starter-data-rest")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("com.squareup.okhttp3:okhttp:4.10.0")
 	implementation("com.google.code.gson:gson:2.9.0")
+	// https://mvnrepository.com/artifact/org.springframework/spring-context
+	implementation("org.springframework:spring-context:5.3.23")
+	// https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-bootstrap
+	implementation("org.springframework.cloud:spring-cloud-starter-bootstrap:3.1.3")
+	// https://mvnrepository.com/artifact/com.google.cloud/spring-cloud-gcp-starter
+	implementation("com.google.cloud:spring-cloud-gcp-starter:3.3.0")
+	// https://mvnrepository.com/artifact/com.google.cloud/spring-cloud-gcp-secretmanager
+	implementation("com.google.cloud:spring-cloud-gcp-secretmanager:3.3.0")
+	// https://mvnrepository.com/artifact/com.google.cloud/google-cloud-logging-logback
+	implementation("com.google.cloud:google-cloud-logging-logback:0.127.10-alpha")
 	runtimeOnly("com.h2database:h2")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")

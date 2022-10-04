@@ -2,5 +2,10 @@ spring:
   cloud:
     gcp:
       secretmanager:
-        enabled: true
-        secret-name-prefix: 'sm://'
+        project-id: dark-park-364407
+        credentials:
+          location:
+#          encoded-key:
+        enabled: true # (this is true by default when the starter is added.)
+        allow-default-secret: true
+#        secret-name-prefix: 'sm://'
