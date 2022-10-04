@@ -21,6 +21,8 @@
 Set Environment Variable [thales_apiURL, thales_apiKey] into your system.
 >_Was trying to hide secret values, but some issue when implementing it on Cloud Run_
 
+__CICD handled by github actions, triggeres on tag created.__
+
 <br>
 To spin up locally. <br>
 
@@ -32,6 +34,7 @@ docker run -p 8080:8080 -t thales-nghaninn
 ### 2. Frontend React
 
 Build using ant design.
+__CICD handled by Amplify, linked with Github, triggers on push__
 ```
 yarn install
 yarn start
@@ -43,6 +46,8 @@ Cannot be executed locally. <br>
 Create aws account and download amplify cli to setup and push to cloud. <br>
 Manual configure db. <br> 
 https://docs.amplify.aws/cli/start/install/
+****
+__CICD: Requires amplify push to commit to server.__
 
 ## Database
 
@@ -53,8 +58,7 @@ https://docs.amplify.aws/cli/start/install/
 5. SIDWaypoint
 6. STARWaypoint
 
-DB query can be found here. 
-https://github.com/nghaninn/thales-airlab-backend/blob/main/amplify/tools/default.sql
+DB query can be found here. https://github.com/nghaninn/thales-airlab-backend/blob/main/amplify/tools/default.sql
 
 <br>
 
@@ -70,13 +74,15 @@ https://github.com/nghaninn/thales-airlab-backend/blob/main/amplify/tools/defaul
 
 >1. Kafka topic / SNS SQS
 >2. Beautiful UI
+>3. And more...
 
 
 ## Your feedback about the tech challenge and what you have learnt from it (please do at least one element which is new to you, and explain it to us)
 
 >1. Springboot: Ease of editing and testing locally.
 >2. Immediate test response.
->3. Requires deeper knowledge and CICD integration.
+>3. Requires deeper knowledge and external services needs to be integrated.
+>4. Manually configure CICD integration.
 
 ## How would you work differently if this was not a test but a two week sprint.
 
