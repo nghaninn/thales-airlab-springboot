@@ -4,7 +4,8 @@
 
 1. Kotlin Springboot Backend (Only implemented RestAPI, Intg Test, CICD on Cloud Run) <br>
    https://github.com/nghaninn/thales-airlab-springboot (this) <br>
-   https://thales-airlab-assignment-k32t6nr5uq-de.a.run.app
+   https://thales-airlab-assignment-k32t6nr5uq-de.a.run.app:8080 <br>
+   https://www.postman.com/bold-crater-938797/workspace/nghaninn-thales-kotlin-spingboot/request/12846015-963a51b2-d79b-463e-a8be-ab86d8cb3b7b
 2. Frontend React (One Page, linked up with Amplify GraphQL) <br>
    https://github.com/nghaninn/thales-airlab-frontend <br>
    URL: https://thales.nghaninn.com/
@@ -55,12 +56,37 @@ https://docs.amplify.aws/cli/start/install/
 DB query can be found here. 
 https://github.com/nghaninn/thales-airlab-backend/blob/main/amplify/tools/default.sql
 
+<br>
+
+# Questions
 
 ## Challenges Faced
 
 >1. No Experience with Kotlin Springboot, largely similar to .NET MVC EF framework
 >2. Errors with docker scripting
->3. 
+>3. Used a wrong backend, running on nosql DynamoDB. Cannot perform group by or joins.
+
+## Unable to accomplished
+
+>1. Kafka topic / SNS SQS
+>2. Beautiful UI
+
+
+## Your feedback about the tech challenge and what you have learnt from it (please do at least one element which is new to you, and explain it to us)
+
+>1. Springboot: Ease of editing and testing locally.
+>2. Immediate test response.
+>3. Requires deeper knowledge and CICD integration.
+
+## How would you work differently if this was not a test but a two week sprint.
+
+>1. Spread the load.
+>2. Incrementally develop and test.
+
+## Your own suggestions on how to improve the code for production quality (how to increase maturity)
+
+>1. Edit / Work on other people's code
+>2. We learn best by copying or witnessing other's mistake.
 
 <br>
 
@@ -79,4 +105,4 @@ https://github.com/nghaninn/thales-airlab-backend/blob/main/amplify/tools/defaul
 <br>
 
 # Others
-<img src="https://raw.githubusercontent.com/nghaninn/thales-airlab-springboot/main/images/springboot_cicd.png?token=GHSAT0AAAAAABZLZI3HYAR3J7DCGYKIHTQUYZ3I3UA">
+<img src="https://raw.githubusercontent.com/nghaninn/thales-airlab-springboot/main/images/springboot_cicd.png">
