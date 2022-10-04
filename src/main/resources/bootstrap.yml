@@ -3,8 +3,8 @@ spring:
     gcp:
       secretmanager:
         project-id: dark-park-364407
-        credentials:
-          location:
+#        credentials:
+#          location:
 #          encoded-key:
         enabled: true # (this is true by default when the starter is added.)
         allow-default-secret: true
