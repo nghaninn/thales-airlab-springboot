@@ -58,6 +58,11 @@ https://github.com/nghaninn/thales-airlab-backend/blob/main/amplify/tools/defaul
 
 ## Challenges Faced
 
+>1. No Experience with Kotlin Springboot, largely similar to .NET MVC EF framework
+>2. Errors with docker scripting
+>3. 
+
+<br>
 
 # API needed
 
@@ -68,7 +73,7 @@ https://github.com/nghaninn/thales-airlab-backend/blob/main/amplify/tools/defaul
       - Get SID by ICAO => https://open-atms.airlab.aero/api/v1/airac/sids/airport/{icao}
       - Get Star by ICAO => https://open-atms.airlab.aero/api/v1/airac/stars/airport/{icao}
 2. List all Airport
-3. List Top2 waypoints
+3. List Top X waypoints
 
 
 <br>
