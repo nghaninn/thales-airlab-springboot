@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: com.nghaninn.thales
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database: h2
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: true
+    show-sql: true
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  h2:
+    console:
+      enabled: true
+thales_apiKey: "${projects/60177703184/secrets/thales_apiKey}"
+thales_apiURL: "${projects/60177703184/secrets/thales_apiURL}"
+##message: Hello from default profile
+
+#---
+#spring:
+#  config:
+#    activate:
+#      on-profile: prod
+#message: Hello from prod profile

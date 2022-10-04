@@ -25,13 +25,13 @@ class DataService(
 
     private val client = OkHttpClient()
 
-//    @Value("\${apiURL}")
-//    lateinit var apiURL: String
-//    @Value("\${apiKey}")
-//    lateinit var apiKey: String
+    @Value("\${thales_apiURL}")
+    lateinit var apiURL: String
+    @Value("\${thales_apiKey}")
+    lateinit var apiKey: String
 
-    var apiURL: String = System.getenv("thales_apiURL") ?: "default_value"
-    var apiKey: String = System.getenv("thales_apiKey") ?: "default_value"
+//    var apiURL: String = System.getenv("thales_apiURL") ?: "default_value"
+//    var apiKey: String = System.getenv("thales_apiKey") ?: "default_value"
 
     fun run(url: String, method: String = "GET", body: RequestBody? = null, then: (String?) -> Unit) {
         val request = Request.Builder()
