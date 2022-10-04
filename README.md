@@ -1,56 +1,74 @@
 # Thales AirLab Assignment
 
 ## WIP
->There are still error in Springboot Cloud Run API, that needs to be resolved.
-
+>~~There are still error in Springboot Cloud Run API, that needs to be resolved.~~
+----
 ## Github repos
 
 1. Kotlin Springboot Backend (Only implemented RestAPI, Intg Test, CICD on Cloud Run) <br>
-   https://github.com/nghaninn/thales-airlab-springboot (this) <br>
-   https://thales-airlab-assignment-k32t6nr5uq-de.a.run.app:8080 <br>
-   https://www.postman.com/bold-crater-938797/workspace/nghaninn-thales-kotlin-spingboot/request/12846015-963a51b2-d79b-463e-a8be-ab86d8cb3b7b
+  https://github.com/nghaninn/thales-airlab-springboot (this repo) <br>
+   - https://thales-airlab-assignment-k32t6nr5uq-de.a.run.app:8080 <br>
+   - https://www.postman.com/bold-crater-938797/workspace/nghaninn-thales-kotlin-spingboot/request/12846015-963a51b2-d79b-463e-a8be-ab86d8cb3b7b
 2. Frontend React (One Page, linked up with Amplify GraphQL) <br>
-   https://github.com/nghaninn/thales-airlab-frontend <br>
-   URL: https://thales.nghaninn.com/
+  https://github.com/nghaninn/thales-airlab-frontend <br>
+   - URL: https://thales.nghaninn.com/
 3. Backend on Amplify (with SQL backend) <br>
    https://github.com/nghaninn/thales-airlab-backend
 
-<br/>
+----
 
 ## Steps to start various project
 
-### 1. Kotlin Springboot
+### **1. Kotlin Springboot**
 
-Set Environment Variable [thales_apiURL, thales_apiKey] into your system.
->_Was trying to hide secret values, but some issue when implementing it on Cloud Run_
+~~Set Environment Variable [thales_apiURL, thales_apiKey] into your system.~~
+>~~_Was trying to hide secret values, but some issue when implementing it on Cloud Run_~~
 
-__CICD handled by github actions, triggeres on tag created.__
+Secrets are stored in Google Cloud Secret Manager (GCP SM)
+<img src="https://raw.githubusercontent.com/nghaninn/thales-airlab-springboot/main/images/google_secret_manager.png">
+- Create Value in GCP SM
+- Init local env with GCP profile
+   ```
+   gcloud auth application-default login
+   ```
+- Run Application from Intellij
+
+*CICD handled by github actions, triggeres on tag created.*
 
 <br>
-To spin up locally. <br>
+
+~~To spin up locally.~~
 
 ```
 docker build -t thales-nghaninn .
 docker run -p 8080:8080 -t thales-nghaninn
 ```
 
-### 2. Frontend React
+>Runs failed after implmented GCP SM
 
-Build using ant design.
-__CICD handled by Amplify, linked with Github, triggers on push__
+----
+
+### **2. Frontend React**
+
+Build using ant design. <br>
+*CICD handled by Amplify, linked with Github, triggers on push*
 ```
 yarn install
 yarn start
 ```
 
-### 3. Backend on Amplify
+---
+
+### **3. Backend on Amplify**
 
 Cannot be executed locally. <br>
 Create aws account and download amplify cli to setup and push to cloud. <br>
 Manual configure db. <br> 
 https://docs.amplify.aws/cli/start/install/
-****
-__CICD: Requires amplify push to commit to server.__
+
+*CICD: Requires amplify push to commit to server.*
+
+----
 
 ## Database
 
@@ -65,6 +83,8 @@ DB query can be found here. https://github.com/nghaninn/thales-airlab-backend/bl
 
 <br>
 
+----
+
 # Questions
 
 ## Challenges Faced
@@ -73,6 +93,7 @@ DB query can be found here. https://github.com/nghaninn/thales-airlab-backend/bl
 >2. Errors with docker scripting
 >3. Used a wrong backend, running on nosql DynamoDB. Cannot perform group by or joins.
 >4. Error with gradlew build with :test, omitted using -x test
+>~~5. Secret Management~~
 
 ## Unable to accomplished
 
@@ -111,8 +132,9 @@ DB query can be found here. https://github.com/nghaninn/thales-airlab-backend/bl
 2. List all Airport
 3. List Top X waypoints
 
-
 <br>
+
+----
 
 # Others
 <img src="https://raw.githubusercontent.com/nghaninn/thales-airlab-springboot/main/images/springboot_cicd.png">
