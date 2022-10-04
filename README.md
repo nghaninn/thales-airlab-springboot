@@ -1,5 +1,8 @@
 # Thales AirLab Assignment
 
+## WIP
+>There are still error in Springboot Cloud Run API, that needs to be resolved.
+
 ## Github repos
 
 1. Kotlin Springboot Backend (Only implemented RestAPI, Intg Test, CICD on Cloud Run) <br>
