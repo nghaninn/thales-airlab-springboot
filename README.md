@@ -2,18 +2,14 @@
 
 ## Github repos
 
-1. Kotlin Springboot Backend (Only implemented RestAPI, Intg Test, CICD on Cloud Run)
-   
-   https://github.com/nghaninn/thales-airlab-springboot (this)
-2. Frontend React (One Page, linked up with Amplify GraphQL)
-   
-   https://github.com/nghaninn/thales-airlab-frontend
-   
+1. Kotlin Springboot Backend (Only implemented RestAPI, Intg Test, CICD on Cloud Run) <br>
+   https://github.com/nghaninn/thales-airlab-springboot (this) <br>
+   https://thales-airlab-assignment-k32t6nr5uq-de.a.run.app
+2. Frontend React (One Page, linked up with Amplify GraphQL) <br>
+   https://github.com/nghaninn/thales-airlab-frontend <br>
    URL: https://thales.nghaninn.com/
-3. Backend on Amplify (with SQL backend)
-   
+3. Backend on Amplify (with SQL backend) <br>
    https://github.com/nghaninn/thales-airlab-backend
-
 
 <br/>
 
@@ -22,10 +18,11 @@
 ### 1. Kotlin Springboot
 
 Set Environment Variable [thales_apiURL, thales_apiKey] into your system.
+>_Was trying to hide secret values, but some issue when implementing it on Cloud Run_
 
-_Was trying to hide secret values, but some issue when implementing it on Cloud Run_
+<br>
+To spin up locally. <br>
 
-To spin up locally.
 ```
 docker build -t thales-nghaninn .
 docker run -p 8080:8080 -t thales-nghaninn
@@ -74,5 +71,7 @@ https://github.com/nghaninn/thales-airlab-backend/blob/main/amplify/tools/defaul
 3. List Top2 waypoints
 
 
+<br>
 
-## Others
+# Others
+<img src="https://raw.githubusercontent.com/nghaninn/thales-airlab-springboot/main/images/springboot_cicd.png?token=GHSAT0AAAAAABZLZI3HYAR3J7DCGYKIHTQUYZ3I3UA">

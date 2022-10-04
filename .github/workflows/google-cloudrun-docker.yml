@@ -47,6 +47,7 @@ name: Build and Deploy to Cloud Run
 on:
   push:
     branches: [ "main" ]
+    tag: [ "v*" ]
 
 env:
   PROJECT_ID: dark-park-364407 # TODO: update Google Cloud project id
