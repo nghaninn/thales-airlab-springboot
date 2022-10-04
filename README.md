@@ -72,6 +72,7 @@ DB query can be found here. https://github.com/nghaninn/thales-airlab-backend/bl
 >1. No Experience with Kotlin Springboot, largely similar to .NET MVC EF framework
 >2. Errors with docker scripting
 >3. Used a wrong backend, running on nosql DynamoDB. Cannot perform group by or joins.
+>4. Error with gradlew build with :test, omitted using -x test
 
 ## Unable to accomplished
 
