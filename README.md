@@ -146,3 +146,8 @@ DB query can be found here. https://github.com/nghaninn/thales-airlab-backend/bl
 
 1. [Kotlin SpringBoot Tutorial](https://www.udemy.com/course/build-restful-apis-using-kotlin-and-spring-boot)
 2. [GCP Springboot](https://www.youtube.com/watch?v=JqxMTQ2-VIE)
+
+----
+
+# Other works
+[Other Assignment](https://github.com/nghaninn/nghaninn/blob/main/projects/README.md)
