@@ -88,7 +88,7 @@ class DataService(
 
             airportRepository.saveAll(listAirportEntity)
 
-            listAirportDTO.forEach {
+            listAirportDTO.map {
                 run("$apiURL/airac/sids/airport/${it.icao}") {
 //                    println("SID $it")
 //                    val gson = Gson()

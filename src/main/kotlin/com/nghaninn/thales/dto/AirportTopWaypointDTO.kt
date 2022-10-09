@@ -9,6 +9,7 @@ data class AirportTopWaypointDTO (
 
     @Column(name="WAYPOINT_UID")
     var waypointUID: String,
+
     var counted: Int
 )
 

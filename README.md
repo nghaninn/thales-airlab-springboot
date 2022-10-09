@@ -1,18 +1,19 @@
 # Thales AirLab Assignment
 
 ## WIP
+
 >~~There are still error in Springboot Cloud Run API, that needs to be resolved.~~
 ----
 ## Github repos
 
-1. Kotlin Springboot Backend (Only implemented RestAPI, Intg Test, CICD on Cloud Run) <br>
-  https://github.com/nghaninn/thales-airlab-springboot (this repo) <br>
-   - https://thales-airlab-assignment-k32t6nr5uq-de.a.run.app:8080 <br>
-   - https://www.postman.com/bold-crater-938797/workspace/nghaninn-thales-kotlin-spingboot/request/12846015-963a51b2-d79b-463e-a8be-ab86d8cb3b7b
-2. Frontend React (One Page, linked up with Amplify GraphQL) <br>
-  https://github.com/nghaninn/thales-airlab-frontend <br>
+1. Kotlin Springboot Backend (Only implemented RestAPI, Intg Test, CICD on Cloud Run)  
+  https://github.com/nghaninn/thales-airlab-springboot (this repo)  
+   - https://thales-airlab-assignment-k32t6nr5uq-de.a.run.app  
+   - https://www.postman.com/bold-crater-938797/workspace/nghaninn-thales-kotlin-spingboot/request/12846015-963a51b2-d79b-463e-a8be-ab86d8cb3b7b  
+2. Frontend React (One Page, linked up with Amplify GraphQL)  
+  https://github.com/nghaninn/thales-airlab-frontend  
    - URL: https://thales.nghaninn.com/
-3. Backend on Amplify (with SQL backend) <br>
+3. Backend on Amplify (with SQL backend)  
    https://github.com/nghaninn/thales-airlab-backend
 
 ----
@@ -25,21 +26,21 @@
 >~~_Was trying to hide secret values, but some issue when implementing it on Cloud Run_~~
 
 Secrets are stored in Google Cloud Secret Manager (GCP SM)
-<img src="https://raw.githubusercontent.com/nghaninn/thales-airlab-springboot/main/images/google_secret_manager.png">
+<img src="https://raw.githubusercontent.com/nghaninn/thales-airlab-springboot/main/images/google_secret_manager.png">  
 - Create Value in GCP SM
 - Init local env with GCP profile
-   ```
+
+   ```bash
    gcloud auth application-default login
    ```
+
 - Run Application from Intellij
 
 *CICD handled by github actions, triggeres on tag created.*
 
-<br>
-
 ~~To spin up locally.~~
 
-```
+```bash
 docker build -t thales-nghaninn .
 docker run -p 8080:8080 -t thales-nghaninn
 ```
@@ -50,20 +51,22 @@ docker run -p 8080:8080 -t thales-nghaninn
 
 ### **2. Frontend React**
 
-Build using ant design. <br>
+Build using ant design.  
+
 *CICD handled by Amplify, linked with Github, triggers on push*
-```
+
+```bash
 yarn install
 yarn start
 ```
 
----
+----
 
 ### **3. Backend on Amplify**
 
-Cannot be executed locally. <br>
-Create aws account and download amplify cli to setup and push to cloud. <br>
-Manual configure db. <br> 
+Cannot be executed locally.  
+Create aws account and download amplify cli to setup and push to cloud.  
+Manual configure db.  
 https://docs.amplify.aws/cli/start/install/
 
 *CICD: Requires amplify push to commit to server.*
@@ -80,8 +83,6 @@ https://docs.amplify.aws/cli/start/install/
 6. STARWaypoint
 
 DB query can be found here. https://github.com/nghaninn/thales-airlab-backend/blob/main/amplify/tools/default.sql
-
-<br>
 
 ----
 
@@ -101,7 +102,6 @@ DB query can be found here. https://github.com/nghaninn/thales-airlab-backend/bl
 >2. Beautiful UI
 >3. And more...
 
-
 ## Your feedback about the tech challenge and what you have learnt from it (please do at least one element which is new to you, and explain it to us)
 
 >1. Springboot: Ease of editing and testing locally.
@@ -119,7 +119,7 @@ DB query can be found here. https://github.com/nghaninn/thales-airlab-backend/bl
 >1. Edit / Work on other people's code
 >2. We learn best by copying or witnessing other's mistake.
 
-<br>
+----
 
 # API needed
 
@@ -132,17 +132,17 @@ DB query can be found here. https://github.com/nghaninn/thales-airlab-backend/bl
 2. List all Airport
 3. List Top X waypoints
 
-<br>
-
 ----
 
 # Others
 
-![Springboot CICD](https://raw.githubusercontent.com/nghaninn/thales-airlab-springboot/main/images/springboot_cicd.png)
-![Integration Test](https://raw.githubusercontent.com/nghaninn/thales-airlab-springboot/main/images/integration_test.png)
+![Springboot CICD](https://raw.githubusercontent.com/nghaninn/thales-airlab-springboot/main/images/springboot_cicd.png)  
+![Integration Test](https://raw.githubusercontent.com/nghaninn/thales-airlab-springboot/main/images/integration_test.png)  
+[![Thales React Frontend](https://yt-embed.herokuapp.com/embed?v=qyErLeSc8us)](https://www.youtube.com/watch?v=qyErLeSc8us "Datwyler RestAPI")  
 
 ----
 
 # Resource
+
 1. [Kotlin SpringBoot Tutorial](https://www.udemy.com/course/build-restful-apis-using-kotlin-and-spring-boot)
 2. [GCP Springboot](https://www.youtube.com/watch?v=JqxMTQ2-VIE)
